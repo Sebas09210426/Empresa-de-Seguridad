@@ -160,9 +160,143 @@ public class Empresa {
         return null;
     }
 
-    public void setVigilante(Vigilante vigilante) {
+    public boolean setVigilante(Vigilante vigilante) {
         for (Vigilante vigilante1 : vigilantesRegistrados) {
-
+            if (vigilante1.getDocumento().equals(vigilante.getDocumento())) {
+                vigilante1 = vigilante;
+                return true;
+            }
         }
+        return false;
+    }
+
+    public boolean setSupervisor(Supervisor supervisor) {
+        for (Supervisor supervisor1 : supervisoresRegistrados) {
+            if (supervisor1.getDocumento().equals(supervisor.getDocumento())) {
+                supervisor1 = supervisor;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean setOperadorDeMonitoreo(OperadorDeMonitoreo operador) {
+        for (OperadorDeMonitoreo operador1 : operadoresDeMonitoreoRegistrados) {
+            if (operador1.getDocumento().equals(operador.getDocumento())) {
+                operador1 = operador;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean setEquipo(Equipo equipo) {
+        for (Equipo equipo1 : equiposRegistrados) {
+            if (equipo.getCodigo().equals(equipo1.getCodigo())) {
+                equipo1 = equipo;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean setCustodiaFija(CustodiaFija custodiaFija) {
+        for (CustodiaFija custodiaFija1 : custodiasFijasRegistrados) {
+            if (custodiaFija.getCodigoDeContrato().equals(custodiaFija.getCodigoDeContrato())) {
+                custodiaFija = custodiaFija;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean setPatrullajeMovil(PatrullajeMovil patrullajeMovil) {
+        for (PatrullajeMovil patrullajeMovil1 : patrullajesMovilesRegistrados) {
+            if (patrullajeMovil1.getCodigoDeContrato().equals(patrullajeMovil.getCodigoDeContrato())) {
+                patrullajeMovil1 = patrullajeMovil;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean setMonitoreoRemoto(MonitoreoRemoto monitoreo) {
+        for (MonitoreoRemoto monitoreo1 : monitoreosRemotosRegistrados) {
+            if (monitoreo1.getCodigoDeContrato().equals(monitoreo.getCodigoDeContrato())) {
+                monitoreo1 = monitoreo;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarVigilante(Vigilante vigilante) {
+        for (Vigilante vigilante1 : vigilantesRegistrados) {
+            if (vigilante1.getDocumento().equals(vigilante.getDocumento())) {
+               vigilantesRegistrados.remove(vigilante1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarEquipo(Equipo equipo) {
+        for (Equipo equipo1 : equiposRegistrados) {
+            if (equipo.getCodigo().equals(equipo1.getCodigo())) {
+                equiposRegistrados.remove(equipo1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarSupervisor(Supervisor supervisor) {
+        for (Supervisor supervisor1 : supervisoresRegistrados) {
+            if (supervisor1.getDocumento().equals(supervisor.getDocumento())) {
+                supervisoresRegistrados.remove(supervisor1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarOperadorDeMonitoreo(OperadorDeMonitoreo operador) {
+        for (OperadorDeMonitoreo operador1 : operadoresDeMonitoreoRegistrados) {
+            if (operador1.getDocumento().equals(operador.getDocumento())) {
+                operadoresDeMonitoreoRegistrados.remove(operador1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarCustodiaFija(Vigilante vigilante) {
+        for (Vigilante vigilante1 : vigilantesRegistrados) {
+            if (vigilante1.getDocumento().equals(vigilante.getDocumento())) {
+                vigilantesRegistrados.remove(vigilante1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarPatrullajeMovil(Equipo equipo) {
+        for (Equipo equipo1 : equiposRegistrados) {
+            if (equipo.getCodigo().equals(equipo1.getCodigo())) {
+                equiposRegistrados.remove(equipo1);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean eliminarMonitoreoRemoto(MonitoreoRemoto monitoreo) {
+        for (MonitoreoRemoto monitoreo1 : monitoreosRemotosRegistrados) {
+            if (monitoreo1.getCodigoDeContrato().equals(monitoreo.getCodigoDeContrato())) {
+                monitoreosRemotosRegistrados.remove(monitoreo1);
+                return true;
+            }
+        }
+        return false;
     }
 }
